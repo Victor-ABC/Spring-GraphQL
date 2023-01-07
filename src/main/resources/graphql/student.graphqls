@@ -1,0 +1,27 @@
+type Student {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    matrNr: String!
+    semester: Int!
+    courses: [Course]!
+}
+
+type Query {
+    findAllStudents(
+        first: Int,
+        last: Int,
+        fullName: String
+    ): [Student]!
+    countStudents: Int!
+}
+
+type Mutation {
+    newStudent(
+        firstName: String!,
+        lastName: String!,
+        matrNr: String!,
+        semester: Int!
+    ) : Student!
+}
+

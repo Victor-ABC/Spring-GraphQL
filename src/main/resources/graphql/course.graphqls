@@ -1,0 +1,19 @@
+type Course {
+    id: ID!
+    name: String!
+    raum: String!
+    isOnline: Boolean!
+    gelesenVon: Professor!
+    students: [Student]!
+}
+
+extend type Query {
+    findAllCourses: [Course]!
+    countCourses: Int!
+}
+
+extend type Mutation {
+    newCourse(name: String!, gelesenVon: ID!) : Course!
+}
+
+

@@ -1,0 +1,15 @@
+type Professor {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    titel: String!
+}
+
+extend type Query {
+    findAllProfessors: [Professor]!
+    countProfessors: Int!
+}
+
+extend type Mutation {
+    newProfessor(firstName: String!, lastName: String!, titel: String!) : Professor!
+}
